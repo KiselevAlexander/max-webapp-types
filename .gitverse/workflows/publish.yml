@@ -1,13 +1,9 @@
 name: Publish to NPM
 
 on:
-  # Запускает workflow при пушах или пул реквестах, но только для ветки master
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+  release:
+    types:
+      - published
 
   # Позволяет запускать этот workflow вручную c вкладки CI/CD
   workflow_dispatch:
