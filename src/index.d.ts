@@ -1,3 +1,5 @@
+import type { TypedPromise } from './helpers';
+
 export type MaxInitDataUnsafe = {
     /**
      * Уникальный идентификатор сессии мини-приложения
@@ -374,11 +376,11 @@ export interface MaxWebApp {
      * 01	user_refused_provide_phone_number	Пользователь отказался предоставить номер телефона
      * 02	request_error	Ошибка при выполнении запроса (нет сети / не ответил backend)
      */
-    requestContact(): Promise<{
+    requestContact(): TypedPromise<{
         phone: string;
         authDate: string;
         hash: string;
-    } | {
+    }, {
         error: {
             code: 'client.request_phone.user_refused_provide_phone_number' | 'client.request_phone.request_error'
         }
