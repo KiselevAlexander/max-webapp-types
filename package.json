@@ -1,6 +1,6 @@
 {
   "name": "@max-webapp/types",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Типизация window.WebApp мини-приложения для Max",
   "repository": {
     "type": "git",

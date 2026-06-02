@@ -367,8 +367,22 @@ export interface MaxWebApp {
     
     /**
      * Запросит телефон у пользователя в нативном диалоговом окне
+     * Описание метода https://dev.max.ru/docs/webapps/bridge#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%B0%20%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%B0
+     *
+     * Возможные ошибки
+     * Если пользователь отказывается поделиться номером телефона или запрос завершился ошибкой, возвращает:
+     * 01	user_refused_provide_phone_number	Пользователь отказался предоставить номер телефона
+     * 02	request_error	Ошибка при выполнении запроса (нет сети / не ответил backend)
      */
-    requestContact(): void;
+    requestContact(): Promise<{
+        phone: string;
+        authDate: string;
+        hash: string;
+    } | {
+        error: {
+            code: 'client.request_phone.user_refused_provide_phone_number' | 'client.request_phone.request_error'
+        }
+    }>;
     
     /**
      * Управляет кнопкой Назад в шапке мини-приложения
