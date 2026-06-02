@@ -1,12 +1,12 @@
 {
   "name": "@max-webapp/types",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Типизация window.WebApp мини-приложения для Max",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KiselevAlexander/max-webapp-types.git"
+    "url": "https://github.com/max-webapp/types.git"
   },
-  "homepage": "https://github.com/KiselevAlexander/max-webapp-types",
+  "homepage": "https://github.com/max-webapp/types",
   "main": "",
   "types": "src/index.d.ts",
   "files": [
